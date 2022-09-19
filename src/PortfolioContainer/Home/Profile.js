@@ -38,7 +38,7 @@ function Profile() {
                     <div className='profile-details-name'>
                         <span className='primary-text'>
                             {" "}
-                            Hello, I'M <span className='highlighted-text'>Vincent Lang'at</span>
+                            Hello, I am <span className='highlighted-text'>Vincent Lang'at</span>
 
                         </span>
 
@@ -80,7 +80,7 @@ function Profile() {
                             
 
                         </button>
-                        <a href="./VinnieKimCV.pdf" download={"Vincent VinnieKimCV.pdf"} >
+                        <a href="doc00517020220616141408.pdf" download="Vincent VinnieKimCV.pdf" >
                                 <button className='btn highlighted-btn'>
                                     Get Resume
                                    
