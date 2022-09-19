@@ -1,5 +1,6 @@
 import { TOTAL_SCREENS } from "./commonUtils";
-import {Subject} from 'rxjs'
+import {Subject} from 'rxjs';
+import {object} from "prop-types";
 
 
 
@@ -46,7 +47,34 @@ export default class ScrollService{
 
         }
     }
-    
+    checkCurrentScreenUnderViewport = (event) =>{
+        if (!event || object.keys(event).length < 1)
+          return;
+          for (let screen of TOTAL_SCREENS){
+              let screenFromDom = document.getElementById(screen.screen_name)
+              if(!screenFromDom)
+              continue;
+              let fullyVisible = this.isElementInView(screenFromDom, "completed")
+              let partiallyVisible = this.isElementInView(screenFromDom, "partial")
+
+
+              if(fullyVisible || partiallyVisible){
+                  if(partiallyVisible && !screen.alreadyRendered){
+                      ScrollService.currentScreenFadeIn.next({
+                          fadeInScreen: screen.screen_name
+                      });
+                      screen['alreadyRendered'] = true
+                      break;
+                  }
+                  if(fullyVisible){
+                      ScrollService.currentScreenBroadCaster.next({
+                          screenInView: screen.screen_name
+                      });
+                      break;
+                  }
+              }
+          }
+    }
 }
 
 
