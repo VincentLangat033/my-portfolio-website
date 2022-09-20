@@ -39,7 +39,7 @@
     justify-content: center;
 
 }
-..separator-blob div{
+.separator-blob div{
     width: 35px;
     border-radius: 10px;
     background-color: var(--dark-orange);
