@@ -1,4 +1,5 @@
 import React from 'react'
+import './screenheading.css'
 
 function ScreenHeading(props) {
   return (
