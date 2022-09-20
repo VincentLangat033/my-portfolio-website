@@ -67,7 +67,7 @@ function Header() {
                     {/* Your logo goes here either a text or image */}
                     <span> VINCENTLANGAT</span>
                 </div>
-                <div className= {(showHeaderOptions)? "header-optons show-hamburger-options": "heaer-options"}>
+                <div className= {(showHeaderOptions)? "header-options show-hamburger-options": "header-options"}>
                     { getHeaderOptions() }
                 </div>
             </div>
