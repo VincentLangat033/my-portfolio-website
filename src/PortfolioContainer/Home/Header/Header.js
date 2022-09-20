@@ -23,7 +23,7 @@ function Header() {
     const getHeaderOptions = ()=>{
         return(
             TOTAL_SCREENS.map((screen, i)=>(
-                <div key={screen.screen_name} className={getHeaderOptions(i)}
+                <div key={screen.screen_name} className={getHeaderOptionsClass(i)}
                 onClick={()=> switchScreen(i, screen)}>
                     <span> {screen.screen_name}</span>
                 </div>
@@ -31,7 +31,7 @@ function Header() {
             )
         )
 
-    }
+    };
 
     const getHeaderOptionsClass = (index)=>{
         let classes = "header-option";
@@ -41,7 +41,7 @@ function Header() {
         classes += "selected-header-option";
         return
 
-    }
+    };
 
     const switchScreen = (index, screen) =>{
         let screenComponent = document.getElementById(screen.screen_name)
@@ -58,7 +58,7 @@ function Header() {
 
   return (
     <div>
-        <div className='header-option' onClick={()=> setShowHeaderOptions(!showHeaderOptions)}>
+        <div className='header-container' onClick={()=> setShowHeaderOptions(!showHeaderOptions)}>
             <div className='header-parent'>
                 <div className='header-hamburger' onClick={()=> setShowHeaderOptions(!showHeaderOptions)}>
                     <FontAwesomeIcon className='header-hamburger-bars' icon={faBars} />
@@ -67,8 +67,8 @@ function Header() {
                     {/* Your logo goes here either a text or image */}
                     <span> VINCENTLANGAT</span>
                 </div>
-                <div className= {(showHeaderOptions)? "header-options show-hamburger-options": "header-options"}>
-                    {getHeaderOptions}
+                <div className= {(showHeaderOptions)? "header-optons show-hamburger-options": "heaer-options"}>
+                    { getHeaderOptions() }
                 </div>
             </div>
         </div>
