@@ -57,7 +57,7 @@ function AboutMe(props) {
         <div className='about-me-parent'>
             <ScreenHeading  title={"About Me"} subHeading={"Why choose me?"}/>
             <div className='about-me-card'>
-                <div className='about-me-profile'></div>
+                <div className='about-me-profile'> </div>
                 <div className='about-me-details'>
                     <span className='about-me-description'> {SCREEN_CONSTANTS.description}</span>
                     <div className='about-me-highlights'>
@@ -86,6 +86,7 @@ function AboutMe(props) {
                     </div>
 
                 </div>
+                
 
             </div>
 
