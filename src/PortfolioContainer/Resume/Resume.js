@@ -2,14 +2,26 @@ import React,{useState} from 'react'
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading'
 import ScrollService from '../../utilities/ScrollService'
 import Animations from '../../utilities/Animations'
+import './resume.css'
 
 
 function Resume(props) {
     const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
     const [carousalOffSetStyle, setCarousalOffSetStyle] = useState({});
 
+    let fadeInScreenHandler = (screen) =>{
+        if(!screen.fadeScreen !== props.id)
+        return
+
+        Animations.animations.fadeInScreen(props.id)
+
+    };
+
+    const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+
     const ResumeHeading = (props) =>{
-        <div className='resume-heading'>
+        return(
+            <div className='resume-heading'>
             <div className='resume-main-heading'>
                 <div className='heading-bullet'>
                     <span>{props.heading ? props.heading : ''}</span>
@@ -30,6 +42,9 @@ function Resume(props) {
                 </div>
             </div>
         </div>
+
+        )
+       
     };
 
     const resumeBullets = [
@@ -131,26 +146,127 @@ function Resume(props) {
                   </span> 
                   
 
+              </div>,
+              <div className='resume-screen-container programming-skills-container' key="programming-skills">
+
+              {programmingSkillsDetails.map((skill, index)=>(
+                  <div className='skill-parent' key={index}> 
+                  <div className='heading-bullet'></div>
+                  <span>{skill.skill}</span>
+                  <div className='skill-percentage'> 
+                  <div style={{width: skill.ratingPercentage + "%"}} 
+                     className="active-percentage"> 
+                     
+                     </div>
+                     </div>
+                  </div>
+              ))}
+
+              </div>,
+              <div className='resume-screen-container' key="projects">
+                  {projectDetails.map((projectDetails, index)=>(
+                      <ResumeHeading
+                      key={index}
+                      heading={projectDetails.title}
+                      subHeading={projectDetails.subHeading}
+                      description={projectDetails.description}
+                      fromDate={projectDetails.duration.fromDate}
+                      toDate={projectDetails.duration.toDate}
+                       />
+
+                  ))}
+              </div>,
+
+              <div className='resume-screen-container' key="interests">
+                  <ResumeHeading 
+                  heading="Teaching"
+                  description =" I Love teaching, I find it fascinating to teach someone something new"
+                 />
+                 <ResumeHeading 
+                  heading="Problem Solving"
+                  description =" I Love problem solving, I find it fascinating to teach someone something new"
+                 />
+                 <ResumeHeading 
+                  heading="Chess Playing"
+                  description =" I am not yet at pro level but I like participating in challenging chess puzzles"
+                 />
+
+
               </div>
+              
+
+
 
         </div>
 
-    ]
+    ];
+
+    const handleCarousal = (index)=>{
+        let offsetHeight = 360;
+        let newCarousalOffset={
+            style: {transform: "translateY("+ index * offsetHeight * -1 +"px)"}
+
+        };
+        setCarousalOffSetStyle(newCarousalOffset);
+        setSelectedBulletIndex(index);
+
+    }
+
+    const getBullets = () =>{
+        return resumeBullets.map((bullet, index) => (
+            <div  
+            onClick={()=>handleCarousal(index)}
+            className={
+                index === selectedBulletIndex ? "bullet selected-bullet" : "bullet"
+            }
+            key={index}
+            >
+                <img
+                 className='bullet-logo' 
+                 src={require(`../../assets/Resume/${bullet.logoSrc}`).default} 
+                 alt="oops,,"
+                  />
+                  <span className='bullet-label'> {bullet.label}</span>
+
+            </div>
+
+        ))
+    }
+
+    const getResumeScreen = ()=>{
+        return(
+            <div 
+            style={carousalOffSetStyle.style}
+            className="resume-details-carousal"
+            >
+                {resumeDetails.map((ResumeDetail)=>ResumeDetail)}
+
+
+            </div>
+
+
+        )
+    }
     
-    let fadeInScreenHandler = (screen) =>{
-        if(!screen.fadeScreen !== props.id)
-        return
-
-        Animations.animations.fadeInScreen(props.id)
-
-    };
-
-    const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+    
 
   return (
     <div className='resume-container screen-container' id={props.id || ""}>
         <div className='resume-content'>
             <ScreenHeading title={"Resume"} subHeading={"My Formal Bio Details"} />
+            <div className='resume-card'>
+                <div className='resume-bullets'>
+                    <div className='bullet-container'>
+                        <div className='bullet-icons'></div>
+                        <div className='bullets'>{getBullets()}</div>
+                    </div>
+                </div>
+                <div className='resume-bullets-details'>
+                    {getResumeScreen()}
+                </div>
+
+
+            </div>
         </div>
 
     </div>
