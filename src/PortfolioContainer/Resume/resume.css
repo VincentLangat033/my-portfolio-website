@@ -5,6 +5,10 @@
     justify-content: center;
     min-height: fit-content;
     margin: 120px 0;
-    
-
+}
+.resume-card{
+    display: flex;
+    height: 360px;
+    width: 1000px;
+    background-color: tomato;
 }
