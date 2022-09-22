@@ -107,6 +107,13 @@ form button:hover{
 form{
     flex: 0.9;
 }
+button .load{
+    width: 100%;
+}
+button .load img{
+    width: 60px;
+    color: green;
+}
 
 .col i{
     padding: 7px;
