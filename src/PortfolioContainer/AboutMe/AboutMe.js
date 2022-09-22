@@ -59,7 +59,7 @@ function AboutMe(props) {
 
 
   return (
-    <div className='about-me-container screen-container' id={props.id || ""}>
+    <div className='about-me-container screen-container ' id={props.id || ""}>
         <div className='about-me-parent'>
             <ScreenHeading  title={"About Me"} subHeading={"Why choose me?"}/>
             <div className='about-me-card'>
@@ -75,7 +75,9 @@ function AboutMe(props) {
 
                     </div>
                     <div className='about-me-options'>
-                    <button className='btn primary-btn'>
+                    <button className='btn primary-btn'
+                    onClick={() => ScrollService.scrollHandler.scrollToHireMe()}
+                    >
                             {" "}
                             Hire Me {" "}
                             
