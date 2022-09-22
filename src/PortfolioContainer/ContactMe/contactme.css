@@ -1,0 +1,117 @@
+.main-container{
+    min-height: 100vh;
+}
+.central-form{
+    max-width: 1110px;
+    padding: 10px;
+    display: flex;
+    border-radius: 12px;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1f2235;
+}
+.central-form h2{
+    color: white;
+    letter-spacing: 0.2rem;
+    margin-bottom: 20px;
+
+}
+.back-form{
+    max-width: 380px;
+    margin: 0 auto;
+}
+.back-form .img-back{
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+.img-back h4{
+    color: white;
+    letter-spacing: 0.3rem;
+    font-weight: 400;
+    font-size: 18px;
+    opacity: 0.5;
+
+}
+.back-form .img-back img{
+    width: 100%;
+    opacity: 0.5;
+}
+.central-form form{
+    width: auto;
+    display: flex;
+    color: #111;
+    padding: 15px;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: -52px;
+    background-color: white;
+    border-radius: 12px;
+
+}
+form p{
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--dark-orange);
+    letter-spacing: 0.4rem;
+    font-family: "Poppins Bold";
+}
+form label{
+    margin-bottom: 5px;
+    color: black;
+    letter-spacing: 0.2rem;
+}
+form input,textarea{
+    width: 100%;
+    border: 2px solid rgba(0, 0, 0, 0);
+    outline: none;
+    background-color: rgba(250, 220, 220, 0.8);
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 22px;
+    border-radius: 10px;
+    transition: 0.3s ;
+}
+textarea:focus{
+    border: 2px solid rgba(30, 85, 250, 0.47);
+    background-color: white;
+}
+input:focus{
+    border: 2px solid rgba(30, 85, 250, 0.47);
+    background-color: white;
+}
+form button{
+    margin-top: 15px;
+    padding: 5px;
+    outline: none;
+    width: 160px;
+    border: 2px solid var(--dark-orange);
+    font-size: 18px;
+    border-radius: 19px;
+    background-color: #1f2235;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+form button:hover{
+    background-color: #13193f;
+    transition: all ease 1s;
+    border: 2px solid  #1f2235;
+}
+.img-back{
+    flex: 1;
+    align-self: center;
+    margin-right: 20px;
+}
+form{
+    flex: 0.9;
+}
+
+.col i{
+    padding: 7px;
+    color: white;
+}
+.col i:hover{
+    transform: scale(1.6);
+}
