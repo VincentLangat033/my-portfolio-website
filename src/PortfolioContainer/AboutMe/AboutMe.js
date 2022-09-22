@@ -49,6 +49,12 @@ function AboutMe(props) {
             ))
         )
     }
+    useEffect(() => {
+        return () => {
+            /* UNSUBSCRIBE THE SUBSCRIPTIONS */
+            fadeInSubscription.unsubscribe();
+        }
+    }, [fadeInSubscription]);
 
 
 
