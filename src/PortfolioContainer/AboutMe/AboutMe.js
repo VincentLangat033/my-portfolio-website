@@ -13,7 +13,7 @@ function AboutMe(props) {
 
     }
 
-    const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler)
+    const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
 
     const SCREEN_CONSTANTS = {
