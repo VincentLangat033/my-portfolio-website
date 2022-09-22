@@ -115,3 +115,23 @@ form{
 .col i:hover{
     transform: scale(1.6);
 }
+@media screen and (min-width:940px){
+    .back-form{
+        max-width: 1100px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+
+    }
+    .img-back{
+        flex: 1;
+        align-self: center;
+        margin-right: 20px;
+    }
+    form{
+        flex: 0.9;
+    }
+
+
+}
