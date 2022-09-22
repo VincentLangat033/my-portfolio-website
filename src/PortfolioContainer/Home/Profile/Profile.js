@@ -1,6 +1,7 @@
 import React from 'react'
 import Typical from 'react-typical'
 import "./profile.css"
+import ScrollService from '../../../utilities/ScrollService'
 
 function Profile() {
   return (
