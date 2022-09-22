@@ -19,20 +19,22 @@ function Resume(props) {
 
     const fadeInSubscription = ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
 
-    const ResumeHeading = (props) =>{
+    const ResumeHeading = (props) => {
         return(
             <div className='resume-heading'>
             <div className='resume-main-heading'>
-                <div className='heading-bullet'>
+                <div className='heading-bullet'> </div>
                     <span>{props.heading ? props.heading : ''}</span>
                     {props.fromDate && props.toDate ? ( 
                         <div className='heading-date'>
-                            {props.fromDate + "_" +props.toDate}
+                            {props.fromDate + "-" + props.toDate}
 
                         </div>
-                    ) : <div> </div>
-                }
-                </div>
+                    ) : (
+                    <div></div>
+                    )}
+                 </div>
+               
                 <div className='resume-sub-heading'>
                     <span> {props.subHeading ? props.subHeading : ""}</span>
 
@@ -40,7 +42,7 @@ function Resume(props) {
                 <div className='resume-heading-description'>
                     <span> {props.description ? props.description : ""}</span>
                 </div>
-            </div>
+           
         </div>
 
         )
@@ -68,27 +70,49 @@ function Resume(props) {
     ];
 
     const projectDetails =[
+        // {
+        //     title: "Personal Portfolio Website",
+        //     duration: {fromDate: "2022", toDate: "2022"},
+        //     description: "A Personal Portfolio Website to showcase all my details and projects at one place",
+        //     subHeading: "Technologies Used: React JS, Bootstrap"
+
+        // },
+        // {
+        //     title: "Real Estate Management System",
+        //     duration: {fromDate: "2021", toDate: "2022"},
+        //     description: "A Real Estate House Management System duped Keja Yangu",
+        //     subHeading: "Technologies Used: React JS, Bootstrap"
+
+        // },
+        // {
+        //     title: "Personal Portfolio Website",
+        //     duration: {fromDate: "2020", toDate: "2022"},
+        //     description: "A Personal Portfolio Website to showcase all my details and projects at one place",
+        //     subHeading: "Technologies Used: React JS, Bootstrap"
+
+        // },
         {
             title: "Personal Portfolio Website",
-            duration: {fromDate: "2022", toDate: "2022"},
-            description: "A Personal Portfolio Website to showcase all my details and projects at one place",
-            subHeading: "Technologies Used: React JS, Bootstrap"
-
-        },
-        {
-            title: "Real Estate Management System",
-            duration: {fromDate: "2021", toDate: "2022"},
-            description: "A Real Estate House Management System duped Keja Yangu",
-            subHeading: "Technologies Used: React JS, Bootstrap"
-
-        },
-        {
-            title: "Personal Portfolio Website",
-            duration: {fromDate: "2020", toDate: "2022"},
-            description: "A Personal Portfolio Website to showcase all my details and projects at one place",
-            subHeading: "Technologies Used: React JS, Bootstrap"
-
-        },
+            duration: { fromDate: "2020", toDate: "2020" },
+            description:
+              "A Personal Portfolio website to showcase all my details and projects at one place.",
+            subHeading: "Technologies Used: MERN STACK",
+          },
+          {
+            title: "Mayberry Client Portal",
+            duration: { fromDate: "2020", toDate: "2020" },
+            description:
+              "An investment platform designed to take in equity and cambio orders from it's users along with the statistics of their shares, market and their application status.",
+            subHeading: "Technologies Used: Angular JS, TypeScript, SQL & PHP.",
+          },
+          {
+            title: "Converse (Currently Ongoing)",
+            duration: { fromDate: "2020", toDate: "2021" },
+            description:
+              "A messaging platform utilizing the functionality of Sockets I/O through REST API to provide realtime messaging experience.",
+            subHeading:
+              "Technologies Used: React JS, Express JS, Socket IO & MongoDB.",
+          },
 
     ];
 
@@ -113,9 +137,12 @@ function Resume(props) {
             fromDate={"2013"}
             toDate={"2016"} 
               />
+       
 
         </div>,
+        // Work Experience
         <div className='resume-screen-container' key="work-experience">
+         <div className='experience-container'>
             <ResumeHeading 
             heading = {"County Government of Kericho"}
             subHeading ={"ICT INTERN"}
@@ -129,25 +156,33 @@ function Resume(props) {
                        of Kericho
                   </span>
               </div>
-              <div className='experience-description'>
-              <span className='resume-description-test'>
-                      -I developed the following as an ICT Intern at the county Government 
-                      of Kericho
-                  </span> 
-                  <br/>
-                  <span className='resume-description-test'>
-                      -I also developed the following as an ICT Intern at the county Government 
-                      of Kericho
-                  </span> 
-                  <br />
-                  <span className='resume-description-test'>
-                      -I also developed the following as an ICT Intern at the county Government 
-                      of Kericho
-                  </span> 
+              <div className="experience-description">
+          <span className="resume-description-text">
+            - Developed a customer portal for individual, director, joint
+            holders and share holders in the application and developed
+            dashboards to track investment history.
+          </span>
+          <br />
+          <span className="resume-description-text">
+            - Integrated the web app with backend services to create new user
+            onboarding application with dynamic form content.{" "}
+          </span>
+          <br />
+          <span className="resume-description-text">
+            - Collaborated with in-house web designers and developed UI as per
+            the given designs.
+          </span>
+          <br />
+        </div>
+        </div>
+                  
                   
 
               </div>,
-              <div className='resume-screen-container programming-skills-container' key="programming-skills">
+
+            //   Programming Skills
+              <div 
+              className='resume-screen-container programming-skills-container' key="programming-skills">
 
               {programmingSkillsDetails.map((skill, index)=>(
                   <div className='skill-parent' key={index}> 
@@ -197,7 +232,7 @@ function Resume(props) {
 
 
 
-        </div>
+
 
     ];
 
@@ -261,7 +296,7 @@ function Resume(props) {
                         <div className='bullets'>{getBullets()}</div>
                     </div>
                 </div>
-                <div className='resume-bullets-details'>
+                <div className='resume-bullet-details'>
                     {getResumeScreen()}
                 </div>
 
