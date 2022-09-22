@@ -3,8 +3,8 @@ import Typical from 'react-typical'
 import axios from 'axios'
 import {toast} from 'react-toastify'
 
-import imgBack from '../../../src/images/mailz.jpeg'
-import load1 from '../../../src/images/load2.gif'
+import imgBack from '../../images/mailz.jpeg'
+import load1 from '../../images/load2.gif'
 import ScreenHeading from '../../utilities/ScreenHeading/ScreenHeading';
 import ScrollService from '../../utilities/ScrollService';
 import Animations from '../../utilities/Animations';
@@ -53,10 +53,14 @@ function ContactMe(props) {
                 setBanner(res.data.msg)
                 toast.error(res.data.msg)
                 setBool(false)
+                
             }else if(res.status === 200){
                 setBanner(res.data.msg)
                 toast.success(res.data.msg)
                 setBool(false)
+                setName("")
+                setEmail("")
+                setMessage("")
             }
 
         }
