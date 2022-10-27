@@ -1,5 +1,6 @@
 :root{
   --light-blue : #04C3FF;
+  /* --light-blue-shadow:  #0ABEAD; */
   --light-blue-shadow:  rgb(69 211 255 / 27%);
   --sea-green: #0ABEAD;
   --sea-green-dark: #0CBFAE;

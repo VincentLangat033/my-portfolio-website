@@ -10,6 +10,7 @@ import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
 import "./contactme.css";
 
+
 function ContactMe(props) {
   let fadeInScreenHandler = (screen) => {
     if (!screen.fadeScreen !== props.id) return;
@@ -73,6 +74,7 @@ function ContactMe(props) {
     };
   }, [fadeInSubscription]);
   return (
+      <>
     <div className="main-container" id={props.id || ""}>
       <ScreenHeading subHeading={"Let's Keep In Touch"} title={"Contact Me"} />
       <div className="central-form">
@@ -137,6 +139,9 @@ function ContactMe(props) {
         </div>
       </div>
     </div>
+  
+    </>
+   
   );
 }
 

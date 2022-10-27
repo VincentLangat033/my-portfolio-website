@@ -9,7 +9,8 @@
     margin: 0 auto;
     flex-direction: column;
     justify-content: center;
-    background-color: #1f2235;
+    background-color: #0b7c70;
+     /* background-color: #1f2235; */
 }
 .central-form h2{
     color: white;
@@ -41,7 +42,7 @@
 .central-form form{
     width: auto;
     display: flex;
-    color: #111;
+    color: #0b7c70;
     padding: 15px;
     justify-content: center;
     flex-direction: column;
@@ -89,7 +90,7 @@ form button{
     border: 2px solid var(--dark-orange);
     font-size: 18px;
     border-radius: 19px;
-    background-color: #1f2235;
+    background-color: #0b7c70;
     color: white;
     align-items: center;
     justify-content: center;
