@@ -83,7 +83,10 @@ function Profile() {
                             
 
                         </button>
-                        <a href="doc00517020220616141408.pdf" download="Vincent VinnieKimCV.pdf" >
+//                         <a href="doc00517020220616141408.pdf" download="Vincent VinnieKimCV.pdf" >
+                           <a href="https://docs.google.com/document/d/10HwKS56vjSyiVCnDvgWTW5_i0lth7bsfhu0JTpTNBeQ/edit?usp=drivesdk">
+
+
                                 <button className='btn highlighted-btn'>
                                     Get Resume
                                    
